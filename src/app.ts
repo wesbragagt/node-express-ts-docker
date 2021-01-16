@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import routes from './routes'
 import dotenv from 'dotenv'
+import {importAllRoutes} from './lib/importAllRoutes'
+const routes = importAllRoutes(require.context('./routes', true, /\.ts$/))
 
 dotenv.config()
 const app = express()
