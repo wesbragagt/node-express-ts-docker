@@ -1,5 +1,5 @@
 # Light node image with yarn installed
-FROM node:13.12.0-alpine
+FROM node:12-alpine
 
 WORKDIR /app
 
