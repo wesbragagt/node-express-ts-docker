@@ -15,6 +15,6 @@ This template aims to provide an easy to implement boilerplate for creating Node
 
 `yarn dev:docker` - Creates and runs an isolated environment in a docker container for **development** (recommended).
 
-### Deploying the code
+### Building for production
 
-`STAGE=(dev|qa|prod) yarn build:docker` - This command will transpile and create a distribution folder in a docker image to be pushed to any cloud environment that can run docker images.
+`yarn build:docker` - This command will transpile and create a distribution folder in a docker image.
