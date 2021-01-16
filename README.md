@@ -6,6 +6,9 @@
 
 This template aims to provide an easy to implement boilerplate for creating NodeJS based APIs using NodeJS, Express, Typescript, Webpack and Docker.
 
+- Formating and linting with prettier-standard
+- Tests with Jest and supertest
+
 ## Getting Started
 
 `yarn install` - Install all the dependencies.
