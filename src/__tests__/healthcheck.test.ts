@@ -2,8 +2,10 @@ import express from 'express'
 import request from 'supertest'
 import healthcheck from '../routes/healthcheck'
 
+// Need to instantiate another express instance in order to inject the route
+// require.context does not work with test suite
 const app = express()
-app.use('/',healthcheck)
+app.use('/', healthcheck)
 
 describe('GET /healthcheck', () => {
   test('Success', async () => {
