@@ -11,6 +11,11 @@ This template aims to provide an easy to implement boilerplate for creating Node
 `yarn install` - Install all the dependencies.
 `yarn dev` - Run a local API environment for **development**.
 
+Included routes
+
+- /
+- /healthcheck
+
 Create a route file .ts under routes and webpack will import every route within that folder so you don't have to worry about importing routes.
 
 ## With Docker
