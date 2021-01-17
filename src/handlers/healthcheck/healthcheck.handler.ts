@@ -1,19 +1,20 @@
+// Generated with tools/generate.js
 import express from 'express'
+import { errorResponse, successResponse } from '../../common/response'
 
 const router = express.Router()
 
 router.get('/healthcheck', (req, res) => {
-  const healthcheck = {
+  const data = {
     uptime: process.uptime(),
     message: 'OK',
     timestamp: new Date().toISOString(),
     environment: process.env.STAGE
   }
   try {
-    res.status(200).send(healthcheck)
+    successResponse(res, data)
   } catch (e) {
-    healthcheck.message = e.message || 'Error on healthcheck'
-    res.status(503).send()
+    errorResponse(res, e)
   }
 })
 

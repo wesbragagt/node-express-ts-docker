@@ -8,10 +8,11 @@
     "format": "prettier-standard --format",
     "lint": "prettier-standard --lint",
     "build": "webpack --config webpack.config.prod.js",
-    "test": "jest -u --detectOpenHandles",
+    "test": "jest -u --detectOpenHandles --silent",
     "dev": "webpack --config webpack.config.dev.js",
     "dev:docker": "docker-compose up",
-    "build:docker": "docker -t node-ts-express build ."
+    "build:docker": "docker -t node-ts-express build .",
+    "generate": "node tools/generate.js"
   },
   "lint-staged": {
     "*.ts": [
@@ -36,6 +37,7 @@
     "@types/node": "^14.14.21",
     "@types/supertest": "^2.0.10",
     "@types/webpack-env": "^1.16.0",
+    "colors": "^1.4.0",
     "fs-extra": "^9.0.1",
     "husky": "^4.3.6",
     "jest": "^26.6.3",

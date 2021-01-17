@@ -12,7 +12,7 @@ module.exports = {
     '<rootDir>/test/fixtures',
     '<rootDir>/test/helpers',
     '__mocks__',
-    'template.test.ts'
+    'handler.test.js'
   ],
   transform: {
     '^.+\\.[jt]sx?$': 'ts-jest'
