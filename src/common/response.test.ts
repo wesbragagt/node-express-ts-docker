@@ -1,4 +1,4 @@
-import { errorResponse, successResponse } from '../common/response'
+import { errorResponse, successResponse } from './response'
 
 // mocking res
 const res = () => ({

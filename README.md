@@ -4,7 +4,7 @@
 
 ## About
 
-This template aims to provide an easy to implement boilerplate for creating NodeJS based APIs using NodeJS, Express, Typescript, Webpack and Docker.
+This template aims to provide an easy to implement boilerplate for creating NodeJS based APIs using NodeJS, Express, Typescript, Webpack and Docker. The template uses .handler.ts files as the starting points for new routes as well as handlerName.test.ts colocated to the same directory. Here is a good read about colocation https://kentcdodds.com/blog/colocation enjoy.
 
 - Formating and linting with prettier-standard
 - Tests with Jest and supertest
@@ -13,13 +13,8 @@ This template aims to provide an easy to implement boilerplate for creating Node
 
 `yarn install` - Install all the dependencies.
 `yarn dev` - Run a local API environment for **development**.
-
-Included routes
-
-- /
-- /healthcheck
-
-Create a route file .ts under routes and webpack will import every route within that folder so you don't have to worry about importing routes.
+`yarn generate <handlerName>` - Will run an utility tool for creating handlers with unit tests in the same directory.
+`yarn test` - Will run all tests with the --silent enabled and --detectOpenHandles so you don't get a huge blob of console.logs.
 
 ## With Docker
 
