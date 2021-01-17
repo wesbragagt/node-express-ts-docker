@@ -1,4 +1,5 @@
 import express from 'express'
+import { errorResponse, successResponse } from '../common/response'
 
 const router = express.Router()
 
@@ -10,10 +11,9 @@ router.get('/healthcheck', (req, res) => {
     environment: process.env.STAGE
   }
   try {
-    res.status(200).send(healthcheck)
+    successResponse(res, healthcheck)
   } catch (e) {
-    healthcheck.message = e.message || 'Error on healthcheck'
-    res.status(503).send()
+    errorResponse(res, e)
   }
 })
 

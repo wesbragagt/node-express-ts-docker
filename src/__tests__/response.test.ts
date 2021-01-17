@@ -17,22 +17,22 @@ const res = () => ({
 })
 
 describe('errorResponse', () => {
-  it('should return default error status code', () => {
+  test('should return default error status code', () => {
     const obj = errorResponse(res())
     expect(obj.statusCode).toBe(500)
   })
 
-  it('should return custom error status code', () => {
+  test('should return custom error status code', () => {
     const obj = errorResponse(res(), new Error('custom error'), 401)
     expect(obj.statusCode).toBe(401)
   })
 
-  it('should return default errMsg', () => {
+  test('should return default errMsg', () => {
     const obj = errorResponse(res())
     expect(obj.result.error).toBe('invalid operation')
   })
 
-  it('should return custom errMsg', () => {
+  test('should return custom errMsg', () => {
     const err = new Error('invalid operation')
     const obj = errorResponse(res(), err)
     expect(obj.result.error).toBe(err.message)
