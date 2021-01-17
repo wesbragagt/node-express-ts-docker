@@ -1,7 +1,7 @@
 // Generated with tools/generate.js
 import express from 'express'
 import request from 'supertest'
-import healthcheck from './healthcheck'
+import healthcheck from './healthcheck.handler'
 
 const app = express()
 app.use('/', healthcheck)

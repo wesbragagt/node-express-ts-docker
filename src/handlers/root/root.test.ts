@@ -1,7 +1,7 @@
 // Generated with tools/generate.js
 import express from 'express'
 import request from 'supertest'
-import root from './root'
+import root from './root.handler'
 
 const app = express()
 app.use('/', root)
