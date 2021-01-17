@@ -3,7 +3,7 @@ module.exports = handlerName => ({
   content: `// Generated with tools/generate.js
 import express from 'express'
 import request from 'supertest'
-import ${handlerName} from './${handlerName}'
+import ${handlerName} from './${handlerName}.handler'
 
 const app = express()
 app.use('/', ${handlerName})

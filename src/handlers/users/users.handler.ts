@@ -1,11 +1,10 @@
-module.exports = handlerName => ({
-  content: `// Generated with tools/generate.js
+// Generated with tools/generate.js
 import express from 'express'
 import { errorResponse, successResponse } from '../../common/response'
   
 const router = express.Router()
   
-router.get('/${handlerName.toLowerCase()}', (req, res) => {
+router.get('/users', (req, res) => {
   const data = [{name: 'dataset here'}]
   try {
     successResponse(res, data)
@@ -14,6 +13,4 @@ router.get('/${handlerName.toLowerCase()}', (req, res) => {
   }
 })
 
-export default router`,
-  extension: '.handler.ts'
-})
+export default router
