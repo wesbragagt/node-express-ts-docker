@@ -1,13 +1,34 @@
-const path = require('path')
-const fs = require('fs')
+require("colors");
+const fs = require("fs");
+const templates = require("./templates");
 
-const [_, routeName] = process.argv
-const filesToRead = fs.readdirSync(path.resolve(__dirname, 'templates'))
-const files = filesToRead.map(file =>
-  fs.readFileSync(path.join(__dirname, 'templates', file))
-)
+const handlerName = process.argv[2];
 
-const testDir = path.resolve(__dirname, '../src/__tests__')
-const routesDir = path.resolve(__dirname, '../src/routes')
+if (!handlerName) {
+  console.error("Please supply a valid component name".red);
+  process.exit(1);
+}
 
-console.log({ testDir, routesDir })
+console.log("Creating Component Templates with name: " + handlerName);
+
+const componentDirectory = `./src/handlers/${handlerName}`;
+
+if (fs.existsSync(componentDirectory)) {
+  console.error(`Component ${handlerName} already exists.`.red);
+  process.exit(1);
+}
+
+fs.mkdirSync(componentDirectory);
+
+const generatedTemplates = templates.map((template) => template(handlerName));
+
+generatedTemplates.forEach((template) => {
+  fs.writeFileSync(
+    `${componentDirectory}/${handlerName}${template.extension}`,
+    template.content
+  );
+});
+
+console.log(
+  "Successfully created component under: " + componentDirectory.green
+);
