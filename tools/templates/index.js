@@ -1,7 +1,4 @@
-const handlerTests = require("./handler.test")
-const handler = require("./handler")
+const handlerTests = require('./handler.test')
+const handler = require('./handler')
 
-module.exports = [
-    handlerTests,
-    handler
-]
+module.exports = [handlerTests, handler]

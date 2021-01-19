@@ -2,7 +2,9 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { importHandlers } from './lib/importHandlers'
-const routes = importHandlers(require.context('./handlers', true, /\.handler\.ts$/))
+const routes = importHandlers(
+  require.context('./handlers', true, /\.handler\.ts$/)
+)
 
 dotenv.config()
 const app = express()

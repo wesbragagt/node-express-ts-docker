@@ -1,4 +1,3 @@
-
 module.exports = handlerName => ({
   content: `// Generated with tools/generate.js
 import express from 'express'
