@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "wesbragagt",
   "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "format": "prettier-standard --format",
     "lint": "prettier-standard --lint",
